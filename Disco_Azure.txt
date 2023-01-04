@@ -1,0 +1,40 @@
+Listar discos no prompt
+fidisk -l
+
+#         Start          End    Size  Type            Name
+ 1         2048   4294965247      2T  Microsoft basic xfspart
+
+Disk /dev/sdj: 2199.0 GB, 2199023255552 bytes, 4294967296 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+[root@AZ-VIANENSE-BD-VIAHML dev]# sudo parted /dev/sdj --script mklabel gpt mkpart xfspart xfs 0% 100%
+
+[root@AZ-VIANENSE-BD-VIAHML dev]# sudo mkfs.xfs /dev/sdj1
+meta-data=/dev/sdj1              isize=512    agcount=4, agsize=134217600 blks
+         =                       sectsz=512   attr=2, projid32bit=1
+         =                       crc=1        finobt=0, sparse=0
+data     =                       bsize=4096   blocks=536870400, imaxpct=5
+         =                       sunit=0      swidth=0 blks
+naming   =version 2              bsize=4096   ascii-ci=0 ftype=1
+log      =internal log           bsize=4096   blocks=262143, version=2
+         =                       sectsz=512   sunit=0 blks, lazy-count=1
+realtime =none                   extsz=4096   blocks=0, rtextents=0
+
+[root@AZ-VIANENSE-BD-VIAHML dev]# sudo partprobe /dev/sdj1
+
+[root@AZ-VIANENSE-BD-VIAHML dev]# cd /
+[root@AZ-VIANENSE-BD-VIAHML dev]# mkdir /u08
+[root@AZ-VIANENSE-BD-VIAHML /]# sudo mount /dev/sdj1 /u08
+
+
+[root@AZ-VIANENSE-BD-VIAHML /]# df -h /u08
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sdj1       2.0T   33M  2.0T   1% /u08
+
+
+
+
+
