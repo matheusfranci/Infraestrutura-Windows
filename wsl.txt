@@ -1,0 +1,17 @@
+-- Verificar instalações feitas
+wsl --list -v
+
+-- Desinstalação de uma distro
+wsl --unregister distro_name
+
+-- Exportação
+wsl --export Ubuntu "D:\wsl_export\ubuntu-ex.tar"
+
+-- Importação
+wsl --import Ubuntu "D:\wsl_import\ubuntu" "D:\wsl_export\ubuntu-ex.tar"
+
+-- Verificar distros disponíveis
+wsl --install
+
+-- Instalação
+wsl --install -d <Distribution Name>
