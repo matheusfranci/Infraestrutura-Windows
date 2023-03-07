@@ -5,10 +5,10 @@ wsl --list -v
 wsl --unregister distro_name
 
 -- Exportação
-wsl --export Ubuntu "D:\wsl_export\ubuntu-ex.tar"
+wsl --export Debian "D:\wsl_debian_export\Debian.tar"
 
 -- Importação
-wsl --import Ubuntu "D:\wsl_import\ubuntu" "D:\wsl_export\ubuntu-ex.tar"
+wsl --import Ubuntu "D:\wsl_debian_import\Debian" "D:\wsl_debian_export\Debian.tar"
 
 -- Verificar distros disponíveis
 wsl --list --online
