@@ -11,7 +11,7 @@ wsl --export Ubuntu "D:\wsl_export\ubuntu-ex.tar"
 wsl --import Ubuntu "D:\wsl_import\ubuntu" "D:\wsl_export\ubuntu-ex.tar"
 
 -- Verificar distros disponíveis
-wsl --install
+wsl --list --online
 
 -- Instalação
 wsl --install -d <Distribution Name>
