@@ -1,0 +1,19 @@
+1) Acesse a máquina virtual Ubuntu
+
+2) Acesse o terminal e digite:
+
+3) cd /etc/default/
+
+4) su gedit grub
+
+Em: ADICONE A RESOLUÇÃO IDEAL PARA SUAS TELAS.
+
+GRUB_CMDLINE_LINUX_DEFAULT=video=hyperv_fb:1366x768
+
+GRUB_CMDLINE_LINUX=video=hyperv_fb:1366x768
+
+clip_image006
+
+5) digite sudo update-grub
+
+6) reboot (reinicie a máquina virtual Linux)
