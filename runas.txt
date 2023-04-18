@@ -1,0 +1,6 @@
+runas /netonly /user:POLIEDRO\ORION.MATHEUS "C:\Program Files (x86)\Microsoft SQL Server Management Studio 19\Common7\IDE\Ssms.exe"
+runas /netonly /user:DOMINIO\USUÁRIO "C:\DIRETÓRIO\DO\SSMS\Ssms.exe"
+
+Execute no CMD, irá ser solicitada a senha. Há também a possibilidade de criar um atalho com esse comando na área de trabalho.
+Ao se conectar no SSMS use a string da instância assim:
+INSTANCENAME.DOMINIO.NET
