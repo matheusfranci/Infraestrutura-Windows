@@ -1,0 +1,3 @@
+-- Abra o cmd e execute o comando abaixo
+ren *.txt *.sql
+ren *.tipo atual *.tipo que você quer
