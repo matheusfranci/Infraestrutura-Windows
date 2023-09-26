@@ -1,0 +1,1 @@
+Get-EventLog System | Where-Object {$_.EventID -eq “1074” -or $_.EventID -eq “6008” -or $_.EventID -eq “1076” -or $_.EventID -eq “6005” -or $_.EventID -eq “6006” -or $_.EventID -eq “6009”} | ft Machinename, TimeWritten, UserName, EventID, Message -AutoSize -Wrap > D:\MSSQL\LogShutdown.txt
