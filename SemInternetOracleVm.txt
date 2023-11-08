@@ -1,0 +1,3 @@
+To check this,use "sudo nmcli d" command.
+If it is disconnected,use "sudo nmtui"->Edit a connection,select your network interface and choose "Automatically connect" option(by pressing Space key) and select OK.
+Do "sudo reboot now" After logging in,do "ping www.google.com".
