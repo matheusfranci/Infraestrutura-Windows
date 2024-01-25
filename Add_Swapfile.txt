@@ -1,0 +1,40 @@
+------------------------------------------------------------------------------------------
+              total        used        free      shared  buff/cache   available
+Mem:            15G        134M        162M        8.6M         15G         14G
+Swap:          1.0G          0B        1.0G
+
+-- Desabilitando uso do swapfile
+sudo swapoff -a
+
+-- Alocando espaço nesse arquivo
+sudo fallocate -l 4G /swapfile
+
+-- Destinado ao arquivo
+[root@ASMLAB /]# sudo dd if=/dev/zero of=/swapfile bs=4096 count=4194304 status=progress
+
+16798724096 bytes (17 GB) copied, 16.004110 s, 1.0 GB/s
+4194304+0 records in
+4194304+0 records out
+17179869184 bytes (17 GB) copied, 17.7158 s, 970 MB/s
+
+-- Permissionando o arquivo
+[root@ASMLAB /]# chmod 600 /swapfile
+[root@ASMLAB /]# mkswap /swapfile
+Setting up swapspace version 1, size = 51380220 KiB
+no label, UUID=94f85d1e-6eb8-4f5b-b812-50d368a198d7
+[root@ASMLAB /]# swapon /swapfile
+
+              total        used        free      shared  buff/cache   available
+Mem:            15G        145M        148M        8.6M         15G         14G
+Swap:           15G          0B         15G
+
+
+-- Ligando utilização do swap
+sudo swapoff -a
+
+-- Adicionando no fstab
+vi /etc/fstab
+
+[root@ASMLAB /]# grep swap /etc/fstab
+UUID=5b8b83a9-2d3f-476d-9681-5084184f4666 swap                    swap    defaults        0 0
+/swapfile                                                         none    swap    sw        0       0
